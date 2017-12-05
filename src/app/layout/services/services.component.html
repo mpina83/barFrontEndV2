@@ -1,0 +1,39 @@
+<div [@routerTransition]>
+
+    <app-page-header [heading]="'Services'" [icon]="'fa-wrench'"></app-page-header>
+    <h3 class="text-muted">Services
+        <small>request repair</small>
+    </h3>
+    <div class="row">
+        <div class="col-lg-6">
+            <form role="form">
+                <fieldset class="form-group">
+                    <label>Client Number</label>
+                    <input class="form-control">
+                    <p class="help-block">Please Insert Client Number.</p>
+                </fieldset>
+            </form>
+            <fieldset class="form-group">
+                <label for="exampleInputFile">Barcode pic</label>
+                <input type="file" class="form-control-file" id="exampleInputFile">
+            </fieldset>
+            <button type="submit" class="btn btn-primary">Submit Button</button>
+        </div>
+        <div class="col-lg-6">
+            <h3 class="text-muted">Services
+                <small>Backoffice Response</small>
+            </h3>
+            <div class="row">
+                <div class="col-xl-12 col-lg-12">
+                    <span *ngIf="barcodeResponse">
+                        <app-stat [bgClass]="'primary'" [icon]="'fa-comments'" [count]="barcodeResponse.txtDecoderContent"
+                              [label]="barcodeResponse.txtDecoderType">
+                        </app-stat>
+                    </span>
+
+                    <!--<span>{{barcodeResponse.txtDecoderType}} & {{barcodeResponse.txtDecoderContent}}</span>-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
